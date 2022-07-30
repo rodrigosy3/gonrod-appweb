@@ -25,7 +25,7 @@ def home():
             auth.sign_in_with_email_and_password(email, password)
             session['user'] = email
         except:
-            return "Correo o contraseña incorrecta"
+            return "Ocurrio un error"
 
     if ('user' in session):
         return render_template('home.html')

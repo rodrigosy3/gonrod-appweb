@@ -16,12 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@100;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/91ac9f052f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="nav-title navbar-brand" href="/">gonrod</a>
+            <div class="nav-title" id="nav-logo-title">gonrod</div>
+
             {% if 'user' in session %}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,13 +34,41 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Reporte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Atender</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-circle-user fa-xl"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li>
+                                    <div class="container-profile-info">
+                                        <i class="fa-solid fa-circle-user fa-5x"></i> <br>
+                                        Usuario <br>
+                                        {{ session['user'] }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i> | Mi perfil</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i> |
+                                        Configuración</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/cerrar-sesion"><i
+                                            class="fa-solid fa-right-from-bracket"></i> | Salir</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -45,9 +76,10 @@
         </div>
     </nav>
 
-    <div class="container p-3">
+    <div>
         {% block content %}
         {% endblock %}
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>

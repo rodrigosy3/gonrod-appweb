@@ -1,4 +1,5 @@
 :root {
+  /* PERFIL DE COLOR LIGTH */
   --color-principal: #83072d;
   --color-background: #fbfbfe;
   --color-container: #ffffff;
@@ -8,6 +9,27 @@
   --color-subtitle: #41494a;
   --color-text: #697477;
   --color-hover-buttons: #e30202;
+
+  /* SOMBRAS */
+  --shadow-color: 0deg 0% 54%;
+  --shadow-elevation-low: 0.5px 0.5px 0.8px hsl(var(--shadow-color) / 0.43),
+    0.9px 0.9px 1.4px -1.2px hsl(var(--shadow-color) / 0.43),
+    2.2px 2.3px 3.6px -2.5px hsl(var(--shadow-color) / 0.43);
+  --shadow-elevation-medium: 0.5px 0.5px 0.8px hsl(var(--shadow-color) / 0.36),
+    1.4px 1.4px 2.2px -0.6px hsl(var(--shadow-color) / 0.36),
+    2.8px 2.9px 4.5px -1.2px hsl(var(--shadow-color) / 0.36),
+    5.6px 5.8px 9.1px -1.9px hsl(var(--shadow-color) / 0.36),
+    10.9px 11.3px 17.7px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0.5px 0.5px 0.8px hsl(var(--shadow-color) / 0.34),
+    2.8px 2.9px 4.5px -0.3px hsl(var(--shadow-color) / 0.34),
+    5.1px 5.2px 8.2px -0.6px hsl(var(--shadow-color) / 0.34),
+    7.7px 8px 12.5px -0.8px hsl(var(--shadow-color) / 0.34),
+    11.4px 11.7px 18.4px -1.1px hsl(var(--shadow-color) / 0.34),
+    16.4px 16.9px 26.5px -1.4px hsl(var(--shadow-color) / 0.34),
+    23.4px 24.1px 37.8px -1.7px hsl(var(--shadow-color) / 0.34),
+    32.8px 33.8px 53px -1.9px hsl(var(--shadow-color) / 0.34),
+    45.1px 46.4px 72.8px -2.2px hsl(var(--shadow-color) / 0.34),
+    60.8px 62.6px 98.2px -2.5px hsl(var(--shadow-color) / 0.34);
 }
 body.dark-theme {
   --color-principal: #83072d;
@@ -21,18 +43,20 @@ body.dark-theme {
   --color-hover-buttons: none;
 }
 
+/* BODY */
 body {
   background-color: var(--color-background);
   font-size: 16px;
   align-items: center;
 }
 
+/* BARRA DE NAVEGACIÓN */
+/* FONDO */
 nav {
   background-color: var(--color-container);
   border: 1px solid var(--color-border-container);
   box-shadow: 0px 3px 10px var(--color-shadow-container);
   box-sizing: border-box;
-  margin-bottom: 2em;
 }
 .nav-title {
   color: var(--color-principal);
@@ -41,7 +65,18 @@ nav {
   font-size: calc(1em + 0.75vw);
   text-transform: uppercase;
 }
+/* USUARIO */
+.container-profile-info {
+  margin: 0 2.5em;
+  padding: 0.5em;
+  text-align: center;
+}
+.container-profile-info i {
+  margin: 0.2em;
+}
 
+/* LOGIN */
+/* CONTENEDOR */
 .login-container {
   background-color: var(--color-container);
   border: 1px solid var(--color-border-container);
@@ -50,6 +85,7 @@ nav {
   align-items: center;
   text-align: center;
   padding: 2em;
+  margin: 3.5em auto;
   width: min-content;
 }
 .login-title-container {
@@ -59,7 +95,7 @@ nav {
   font-weight: 500;
   text-transform: uppercase;
 }
-
+/* FORMULARIO */
 .login-form h1 {
   color: var(--color-subtitle);
   text-transform: uppercase;
@@ -75,7 +111,7 @@ nav {
   text-align: center;
   width: calc(8em + 7vw);
 }
-
+/* BUTTON REESTABLECER CONTRASEÑA */
 .container-restore-password {
   font-size: calc(0.5em + 0.4vw);
   margin-top: -1em;
@@ -87,7 +123,7 @@ nav {
 .container-restore-password a {
   text-decoration-line: none;
 }
-
+/* BUTTON INICIAR SESION */
 .login-form .login-button-submit {
   color: var(--color-background);
   background-color: var(--color-principal);
@@ -98,4 +134,37 @@ nav {
 }
 .login-form .login-button-submit:hover {
   background-color: var(--color-hover-buttons);
+}
+
+/* HOME */
+.container-panel-principal {
+  margin: 3.5em auto;
+}
+.container-panel-principal .col {
+  background-color: var(--color-container);
+  border: 0.2em solid var(--color-border-container);
+  border-radius: 1em;
+  font-weight: 500;
+  box-shadow: var(--shadow-elevation-medium);
+  text-transform: uppercase;
+  width: calc(10em + 10vw);
+  margin: 2em;
+}
+.container-panel-principal .col:hover {
+  background-color: var(--color-principal);
+  border-color: var(--color-principal);
+}
+.container-panel-principal .col div {
+  text-align: center;
+  margin: 1em;
+}
+.container-panel-principal a {
+  color: var(--color-principal);
+  text-decoration: none;
+}
+.container-panel-principal a:hover {
+  color: var(--color-container);
+}
+.container-panel-principal i {
+  margin: 0.1em;
 }
