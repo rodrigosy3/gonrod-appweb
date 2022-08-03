@@ -58,12 +58,17 @@ nav {
   box-shadow: 0px 3px 10px var(--color-shadow-container);
   box-sizing: border-box;
 }
-.nav-title {
-  color: var(--color-principal);
+/* TITULO */
+.nav-title a {
   font-family: "Prompt";
   font-weight: 700;
   font-size: calc(1em + 0.75vw);
   text-transform: uppercase;
+  color: var(--color-principal);
+  text-decoration: none;
+} 
+.nav-title a:hover {
+  color: var(--color-hover-buttons);
 }
 /* USUARIO */
 .container-profile-info {
@@ -90,9 +95,9 @@ nav {
 }
 .login-title-container {
   color: var(--color-principal);
-  font-size: calc(4em + 3vw);
+  font-size: calc(3.5em + 3vw);
   font-family: "Prompt";
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
 }
 /* FORMULARIO */
@@ -107,7 +112,7 @@ nav {
   border-radius: 0.5em;
   padding: 0.15em;
   margin-top: 0.5em;
-  font-size: calc(0.5em + 0.5vw);
+  font-size: calc(0.4em + 0.4vw);
   text-align: center;
   width: calc(8em + 7vw);
 }
@@ -148,7 +153,8 @@ nav {
   box-shadow: var(--shadow-elevation-medium);
   text-transform: uppercase;
   width: calc(10em + 10vw);
-  margin: 2em;
+  margin: 0 2em;
+  margin-bottom: 2em;
 }
 .container-panel-principal .col:hover {
   background-color: var(--color-principal);
@@ -168,3 +174,25 @@ nav {
 .container-panel-principal i {
   margin: 0.1em;
 }
+
+/* MOSTRAR CATALOGO */
+.container-catalogo{
+  background-color: var(--color-container);
+  border-color: var(--color-border-container);
+  box-shadow: var(--shadow-elevation-medium);
+  margin: 3em auto;
+}
+.container-catalogo .card-header{
+  background-color: var(--color-principal);
+  color: var(--color-container);
+  text-transform: uppercase;
+  font-family: 'Saira';
+  font-size: calc(0.7em + 0.7vw);
+  font-weight: 500;
+}
+.container-catalogo .card-body thead td{
+  justify-content: space-between;
+}
+/* .container-catalogo .card-body .btn-agregar-producto{ */
+/* 
+} */

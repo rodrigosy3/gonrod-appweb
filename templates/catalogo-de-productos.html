@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container-catalogo container card">
+    <div class="card-header text-center">lista de productos</div>
+    <div class="card-body">
+        <table class="">
+            <thead>
+                <tr>
+                    <td>
+                        {% for key, val in snapshot.items(): %}
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseCategoria" role="button"
+                            aria-expanded="false" aria-controls="collapseCategoria">
+                            {{ '{0}'.format(key, val) }}
+                        </a>
+                        {% endfor %}
+
+                        <a class="btn-agg-producto btn" href="/catalogo-de-productos">Agregar producto</a>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {% for key, val in snapshot.items(): %}
+                        <div class="collapse" id="collapseCategoria">
+                            <div class="card card-body">
+                                {{ '{0}'.format(key, val) }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% for key, val in snapshot.items(): %}
+        <div class="container">
+            <p style="border: 1px solid red;"> {{ '{0}'.format(val) }} </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
